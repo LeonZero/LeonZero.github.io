@@ -1,149 +1,50 @@
- * {
- 	margin:0;
- 	padding: 0;
- 	outline: none;
- }
+h1, h2, h3, h4, h5, h6, input{
+    margin: 0;
+    padding: 0;
+}
 
-body{
-	background: url(images/back.jpg) no-repeat;
-	background-size: cover;
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 微软雅黑;
+	background-color: #000;
 }
 
 
-#pct {
-	width: 1200px;
-	height: 720px;
-	background-color: #fff;
-	border: 2px solid #595959;
-	position: relative;
-	margin: 0 auto ;
+#yingbo {
+	position: fixed;
 	top: 100px;
-	text-align: center;
-
-}
-
-#pct a {
-	cursor: pointer;
-	width: 40px;
-	height: 40px;
-	top: 340px;
-	background-color: #fff;
-	position: absolute;
-	text-align: center;
-	text-decoration: none;
-	color: #000;
-	line-height: 40px;
-	font-size: 30px;
-	filter: alpha (opacity:50);
-	opacity:0.5;
-	font-weight: bold;
-}
-#pct a:hover {
-	filter: alpha (opacity:90);
-	opacity:0.9;
-
-}
-
-#prve {
-	position: absolute;
-	left: 10px;
-}
-
-#next {
-	position: absolute;
-	right: 10px;
+	left: 50px;
 }
 
 
-#mus,#txt {
-	width: 1200px;
-	height: 35px;
-	background-color: #000;
-	text-align: center;
-	position: absolute;
-	color: #fff;
-	line-height: 35px;
-	filter: alpha (opacity:50);
-	opacity:0.5;
 
-}
-#mus:hover,#txt:hover {
-	filter: alpha (opacity:90);
-	opacity:0.9;
-
-}
-
-#mus {
-	top: 0;
-}
-
-#txt {
- 	bottom: 0;
-}
-
-#imges_k {
-	width: 1200px;
-	height: 720px;
-}
-
-ul {
-	margin-top: 30px;
-	display: inline-block;
-
-}
-ul li {
-	width: 14px;
-	height: 14px;
-	background-color: #00142B;
-	border-radius: 50%;
-	list-style-type: none;
+#yingbo .g{
 	float: left;
-	margin: 0 10px;
-	cursor:pointer;
-	position: relative;
+	margin-right: 3px;
+	margin-top: 0px;
+	width: 6px;
+	height: 40px;
+	background-color: #D3F86F;
+	border-radius:3px;
+
+	animation-duration: 700ms;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+	animation-name:none;
 
 }
 
-ul li:hover {
-	background-color: #404040;
 
+@keyframes donghua {
+	to {
+		margin-top: 20px;
+		height: 6px;
+		background-color: #13FFF0;
+		border-radius:3px;
+	}
 }
-
-ul li span {
-	display: none;
-	position: absolute;
-	top: -80px;
-	left: -45px;
-	width: 90px;
-	height: 70px;
-/*	background-image: url("images/qie (1).jpg");
-*/	background-repeat: no-repeat;
-	background-size: cover;
-	background-color: #000;
-	border: 3px solid #000;
-}
-
-
-.active {
-	background-color: #686868;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,112 +1,107 @@
-var oxunhuan = document.getElementById("xunhuan");
-var oshunxu = document.getElementById("shunxu");
+var e = document.getElementById("yingbo");
+var f = e.getElementsByTagName("div");
 
-var oprve = document.getElementById("prve");
-var onext = document.getElementById("next");
-
-var omus = document.getElementById("mus");
-var otxt = document.getElementById("txt");
-
-var oshiyan = document.getElementById("shiyan");
-var ospan = oshiyan.getElementsByTagName("span");
-var oli = oshiyan.getElementsByTagName("li");
-
-var odiv = document.getElementById("pct")
-
-var oimges_k = document.getElementById("imges_k");
-var arrurl = ["images/qie (1).jpg", "images/qie (2).jpg", "images/qie (3).jpg", "images/qie (4).jpg"];
-var arrname = ["图片一", "图片二", "图片三", "图片四"];
-
-var onum = 0;
-var oldli = null;
-
-// 定时器开始
-var timer = null;
-function anment() {
-	timer = setInterval(function() {
-		oli[onum].className = "";
-		onum++;
-		onum%=arrurl.length;
-		start();
-	},1000)
-}
-setTimeout(anment,1000);
-odiv.onmouseover = function () {
-	clearInterval(timer);
-}
-odiv.onmouseout = anment;
-
-// 定时器结束
-
-
-// 初始化开始
-function start() {
-	otxt.innerHTML = arrname[onum];
-	omus.innerHTML = onum+1 + "/" + arrurl.length;
-	oimges_k.src = arrurl[onum];
-	oli[onum].className = "active";
-	oldli = oli[onum];
-}
-start();
-
-// 初始化结束
-
-// 上下按钮开始
-onext.onclick = function() {
-	oli[onum].className = "";
-	onum++;
-	if (onum > arrurl.length-1 ) {
-		onum = 0;
-	}
-	start();
-}
-
-oprve.onclick = function() {
-	oli[onum].className = "";
-	onum--;
-	if (onum <= -1 ) {
-		onum = arrurl.length-1;
-	}
-	start();
-}
-
-// 上下按钮结束
-
-// 导航点开始
-for (var i = 0; i < arrurl.length; i++) {
-	ospan[i].style.backgroundImage = "url('"+arrurl[i]+"')";
-	oli[i].index = i;
-	oli[i].onmouseover = function () {
-		ospan[this.index].style.display = "block";
-	}
-	oli[i].onmouseout = function () {
-		ospan[this.index].style.display = "none";
-	}
-	oli[i].onclick = function () {
-		oimges_k.src = arrurl[this.index];
-		omus.innerHTML = this.index + 1 +"/"+arrurl.length;
-		otxt.innerHTML = arrname[this.index];
-
-		onum = this.index;
-
-		oldli.className = "";
-		oldli = this;
-		this.className = "active";
+var i = 0;
+function t() {
+	f[i].style.animationName= "donghua";
+	i= i+1;
+	if (i < f.length) {
+		setTimeout("t()",i*10);
+	} else {
+		return;
 	}
 }
-
-// 导航点结束
-
+t();
 
 
 
+// function t() {
+// 	if (i > f.length) {
+// 	return ;
+// 	}else{
+// 		f[i].style.animationName= "donghua";
+// 		i= i+1;
+// 		setTimeout("t()",i*10);
+// 		}
+
+// 	}
 
 
 
 
+/*
+setTimeout(
+	function(){
+		for (var i = 0; i<arry.length; i++){
+			arry[i].style.animationName = "donghua";
+		}
+	},1000);
+*/
 
 
 
+// window.onload = function () {
+// 	// 下拉菜单
+// 	$().getClass("member").hover(function() {
+// 		$().getClass("wode").css("background","url(images/jiantou_h.png) no-repeat 34px center");
+// 		$().getClass("myicon").css("background","url(images/my_h.png)");
+// 		$().getClass("wode").css("color","#f8b551");
+// 		$().getTagName("ul").show();
+// 	},function() {
+// 		$().getClass("wode").css("background","url(images/jiantou_1.png) no-repeat 34px center");
+// 		$().getClass("myicon").css("background","url(images/my_1.png)");
+// 		$().getTagName("ul").hide();
+// 		$().getClass("wode").css("color","#fff");
+
+// 	})
+
+// 	// 登陆控件
+// 	$().getClass("log").hover(function() {
+// 		$().getClass("log_icon").css("background","url(images/login_h.png)");
+// 		$().getClass("denglu").css("color","#f8b551");
+// 	},function() {
+// 		$().getClass("log_icon").css("background","url(images/login_1.png)");
+// 		$().getClass("denglu").css("color","#fff");
+// 	});
+
+
+// 	// 登陆窗开启分__零散写法
+// /*	$().getClass("log").click(function(){
+// 		$().getId("login").css("display","block");
+// 		$().getId("lock").css("display","block");
+// 	});
+// 	// 登陆窗口关闭
+// 	$().getClass("clo").click(function() {
+// 		$().getId("login").css("display","none");
+// 		$().getId("lock").css("display","none");
+// 	});*/
+
+// 	// 登陆窗与锁屏__紧凑写法
+// 	var login = $().getId("login");
+// 	var lock = $().getId("lock");
+// 	// 居中及窗口变化限制
+// 	login.center(520,410).resize(function(){
+// 		if (login.css("display") == "block") {
+// 			lock.show();
+// 		}
+// 	});
+
+// 	// 登陆窗与锁屏
+// 	$().getClass("log").click(function() {
+// 		login.show();
+// 		lock.show();
+// 	});
+// 	$().getClass("clo").click(function() {
+// 		login.hide();
+// 		lock.hide();
+// 	});
+
+// 	// 拖动窗口
+// 	login.drag();
+
+
+
+// };
 
 
 
